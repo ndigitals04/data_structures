@@ -5,9 +5,6 @@ class Array:
         self.length = length
         self.items = [None] * length
         self.count = 0
-        # for item in self.items:
-        #     if item != None:
-        #         self.count += 1
     
     def print(self):
         for i in range(self.count):
@@ -27,7 +24,14 @@ class Array:
         else:
             self.items[self.count] = value
             self.count += 1
+    def lookupbyIndex(self,index):
+        """index: provide index of item to lookup in array"""
+
+        if index < 0 or index >= self.count:
+            raise Exception("Index out of bounds")
+        return self.items[index]
     
+
     def removeAt(self, index):
         if index < 0 or index >= self.count:
             raise Exception("Index out of bounds")
@@ -48,3 +52,4 @@ array.insert(7) #Inserts 7 into the array
 array.removeAt(3) #Removes the element at index 3
 
 array.print() #Prints the array
+print(array.lookupbyIndex(5))
