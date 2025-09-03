@@ -84,7 +84,7 @@ class Array:
         for i in range(self.count):
             reversed_array.insert(self.items[count_from_end])
             count_from_end-= 1
-        print(reversed_array.items)
+        
         return reversed_array
     
 array = Array(5) #Creates an array of length 5
