@@ -41,6 +41,7 @@ class Array:
         self.count -= 1
 
     def max(self):
+        #run time complexity: O(n)
         if self.count == 0:
             raise Exception("Array is empty")
         max = 0
@@ -48,6 +49,25 @@ class Array:
             if self.items[i] > max:
                 max = self.items[i]
         return max
+    
+    def intersect(self,array):
+        """array: provide another array to find intersection with
+        method returns a new array with the values intersecting"""
+        if self.count == 0 or array.count == 0:
+            raise Exception("One of the arrays is empty")
+        elif self.count >= array.count:
+            smaller_array = array.items
+            smaller_count = array.count
+            larger_array = self.items
+        else:
+            smaller_array = self.items
+            larger_array = array.items
+
+        intersection = Array(smaller_count) 
+        for i in range(smaller_count):
+            if smaller_array[i] in larger_array:
+                intersection.insert(smaller_array[i])
+        return intersection
         
 array = Array(5) #Creates an array of length 5
 array.insert(1) #Inserts 1 into the array
@@ -64,3 +84,11 @@ array.removeAt(3) #Removes the element at index 3
 array.print() #Prints the array
 print(array.lookupbyIndex(5)) # looksup item in array with index of 5
 print(array.max()) # returns number with the largest value.
+array2 = Array (3)
+array2.insert(2)
+array2.insert(3)
+array2.insert(7)
+
+intersection = array.intersect(array2) # returns intersection btw array and array2
+intersection.print()
+print(intersection.items)
