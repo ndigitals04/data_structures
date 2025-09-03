@@ -7,8 +7,16 @@ class Array:
         self.count = 0
     
     def print(self):
+        if self.length == 0:
+            print("[]")
+        
+        array_str = "["
         for i in range(self.count):
-            print(self.items[i])
+            if i == self.count - 1:
+                array_str += str(self.items[i]) + "]"
+            else:
+                array_str+=  str(self.items[i]) +", "
+        print(array_str)
     
     def insert(self, value):
         if self.count == self.length:
@@ -69,6 +77,16 @@ class Array:
                 intersection.insert(smaller_array[i])
         return intersection
         
+    def reverse(self):
+        """method reverses the array"""
+        reversed_array = Array(self.length)
+        count_from_end = self.count - 1
+        for i in range(self.count):
+            reversed_array.insert(self.items[count_from_end])
+            count_from_end-= 1
+        print(reversed_array.items)
+        return reversed_array
+    
 array = Array(5) #Creates an array of length 5
 array.insert(1) #Inserts 1 into the array
 array.insert(2) #Inserts 2 into the array
@@ -92,3 +110,5 @@ array2.insert(7)
 intersection = array.intersect(array2) # returns intersection btw array and array2
 intersection.print()
 print(intersection.items)
+reversed_array = array.reverse() # returns a new array with the values in reverse order
+reversed_array.print()
