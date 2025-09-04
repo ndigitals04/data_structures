@@ -26,8 +26,9 @@ class Array:
                 newArray[i] = self.items[i]
             self.items = newArray
             
-            self.items[self.count] = value
-            self.count += 1
+            if value != None:
+                self.items[self.count] = value
+                self.count += 1
             
         else:
             self.items[self.count] = value
@@ -87,6 +88,26 @@ class Array:
         
         return reversed_array
     
+    def insertAt(self,item,index:int):
+        """item: provide item to insert in array.
+        Index: provide the index the item should be placed.
+        """
+        index_length = self.count -1
+        if type(index) != int:
+            raise Exception("Index can only be of type int")
+        if index < 0 or index >= self.count:
+            raise Exception("Index Out of bounds")
+        
+        if self.count == self.length:
+            self.insert(None)
+        
+        for i in range(index,self.count):
+            self.items[index_length + 1] = self.items[index_length] 
+            index_length -= 1
+            [10,20,20,30,40,50]
+        self.items[index] = item
+        self.count += 1
+
 array = Array(5) #Creates an array of length 5
 array.insert(1) #Inserts 1 into the array
 array.insert(2) #Inserts 2 into the array
@@ -96,11 +117,11 @@ array.insert(4) #Inserts 4 into the array
 array.insert(5) #Inserts 5 into the array
 array.insert(6) #Inserts 6 into the array, resizes the array
 array.insert(7) #Inserts 7 into the array
-# array.insert(8)
+array.insert(8)
 array.removeAt(3) #Removes the element at index 3
 
 array.print() #Prints the array
-print(array.lookupbyIndex(5)) # looksup item in array with index of 5
+print(array.lookupbyIndex(4)) # looksup item in array with index of 5
 print(array.max()) # returns number with the largest value.
 array2 = Array (3)
 array2.insert(2)
@@ -112,3 +133,6 @@ intersection.print()
 print(intersection.items)
 reversed_array = array.reverse() # returns a new array with the values in reverse order
 reversed_array.print()
+
+array.insertAt(43,3)
+array.print()
