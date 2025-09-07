@@ -118,21 +118,21 @@ array.insert(5) #Inserts 5 into the array
 array.insert(6) #Inserts 6 into the array, resizes the array
 array.insert(7) #Inserts 7 into the array
 array.insert(8)
-array.removeAt(3) #Removes the element at index 3
+# array.removeAt(3) #Removes the element at index 3
 
-array.print() #Prints the array
-print(array.lookupbyIndex(4)) # looksup item in array with index of 5
-print(array.max()) # returns number with the largest value.
-array2 = Array (3)
-array2.insert(2)
-array2.insert(3)
-array2.insert(7)
+# array.print() #Prints the array
+# print(array.lookupbyIndex(4)) # looksup item in array with index of 5
+# print(array.max()) # returns number with the largest value.
+# array2 = Array (3)
+# array2.insert(2)
+# array2.insert(3)
+# array2.insert(7)
 
-intersection = array.intersect(array2) # returns intersection btw array and array2
-intersection.print()
-print(intersection.items)
-reversed_array = array.reverse() # returns a new array with the values in reverse order
-reversed_array.print()
+# intersection = array.intersect(array2) # returns intersection btw array and array2
+# intersection.print()
+# print(intersection.items)
+# reversed_array = array.reverse() # returns a new array with the values in reverse order
+# reversed_array.print()
 
-array.insertAt(43,3)
-array.print()
+# array.insertAt(43,3)
+# array.print()
