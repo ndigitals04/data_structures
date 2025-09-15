@@ -2,7 +2,7 @@
 This repository contains codes implementing data structures and alogrithms in Python.
 
 ## Table of Content
-[Arrays](#
+[Arrays](#arrays)
 ## 🧾How to use
 - Fork this repo
 - Clone your forked repo to your pc.
@@ -36,4 +36,13 @@ The difference is that count is the number of items that have been added in the 
 Now the length still remains 5 but the count is 1,having an actual value of 10 in it.
 
 - The print() method: This method was added to enable one print out the items currently in the array. It checks if the array is empty and prints an empty `[]` if so. If it's not empty it prints out all the items in the array as a string.
+
+- The insert() method: This method adds a new item into the array. It works by first checking if the current items in the array is equal to it's length. If it is the array length is increases by 50%. This increment is done by copying all of the items in the current array into a new one of increased length by 50% of the old. After the new array has been created, the item to be added is then confirmed not to be of Nonetype. If it's not the new item is added as the latest index into the array and then the total count of items in the array is increased.
+Insert example:
+``` 
+array = Array[3] # define array with length of 3
+array.insert(1) # insert 1 into array
+array.insert(2) # insert 2 into array
+array.print() # print array
+```
 
