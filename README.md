@@ -46,3 +46,12 @@ array.insert(2) # insert 2 into array
 array.print() # print array
 ```
 
+- The lookupbyIndex() method: This method finds the item stored in a particular index of an array. The index to be looked up is provided as an argument to the `lookupbyIndex` method like so:
+```
+array = Array(3) #Array is defined
+array.insert(2) #Insert 2 into array
+array.inser(4)
+array.lookupbyIndex(1) #lookup item stored with index of 1
+# 4 is retuned as result
+```
+Now how does it work exactly? Very simple actually. We just check if the index provided is not less than 0 and is not above the total number of items in the array currently. If it fulfills those conditions, then the array is simply indexed with the index value to get the actual item stored in that index.
