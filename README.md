@@ -55,3 +55,11 @@ array.lookupbyIndex(1) #lookup item stored with index of 1
 # 4 is retuned as result
 ```
 Now how does it work exactly? Very simple actually. We just check if the index provided is not less than 0 and is not above the total number of items in the array currently. If it fulfills those conditions, then the array is simply indexed with the index value to get the actual item stored in that index.
+
+- The removeAt() method: This method removes from an array the index passed passed to it as an argument.
+```
+array.removeAt(2) #Removes item at index 2 in array
+```
+The method works by first checking if the index is not out of range ie less than 0 or greater than total items currently in the array. Then the array identifies the item in the position of the provided index and reassigns it to the item of the next index(i+1). It does this till the second to the last count index of the array.
+If we had an array with these items `[10,20,30,40,50,None,None]`.If we used performed `array.removeAt(2)`, after the above stated operation, it will now look like `[10,30,40,40,None,None]`
+After that, it simply replaces the last copied item with a Nonetype value. The array would then look like this `[10,30,40,None,None,None]`. This is one way of removing an item from an array through it's index with python.
