@@ -6,6 +6,8 @@ class Array:
         self.items = [None] * length
         self.count = 0
     
+    def __str__(self):
+        return self.items
     def print(self):
         if self.length == 0:
             print("[]")
@@ -107,6 +109,12 @@ class Array:
             [10,20,20,30,40,50]
         self.items[index] = item
         self.count += 1
+    def toString(self):
+        stringArray = "["
+        for i in range(self.count - 1):
+            stringArray += str(self.items[i]) + ","
+        stringArray += str(self.items[self.count-1]) + "]"
+        return stringArray
 
 array = Array(5) #Creates an array of length 5
 array.insert(1) #Inserts 1 into the array

@@ -1,3 +1,4 @@
+from arrays import Array
 class linkedList:
     def __init__(self):
         self.items = [[None,None]] * 5
@@ -97,9 +98,22 @@ class linkedList:
                     break
                 currentIndex = self.items[currentIndex][1]
         return False
+    def size(self):
+        return self.count
     
-    def print(self):
-        return self.items
+    def toArray(self):
+        current = 0
+        index = 0
+        array = Array(self.count)
+        while current != None:
+            array.insert(self.items[current][0])
+            current = self.items[current][1]
+            index += 1
+        return (array)
+    
+    def __str__(self):
+        array = self.toArray()
+        return array.toString()
         # linkedlist = "["
         # for i in range(self.count):
         #     linkedlist += str(self.items[i][0]) + ","
@@ -123,6 +137,6 @@ print(linkedlist.contains(6))
 print(linkedlist.indexOf(9))
 print(linkedlist.getFirst())
 print(linkedlist.getLast())
-print(linkedlist.print())
-
+print(linkedlist.size())
+print(linkedlist)
     
