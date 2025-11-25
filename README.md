@@ -2,7 +2,8 @@
 This repository contains codes implementing data structures and alogrithms in Python.
 
 ## Table of Content
-[Arrays](#arrays)
+[Arrays](#arrays)  
+[LinkedList](#linkedlist)
 ## 🧾How to use
 - Fork this repo
 - Clone your forked repo to your pc.
@@ -63,3 +64,11 @@ array.removeAt(2) #Removes item at index 2 in array
 The method works by first checking if the index is not out of range ie less than 0 or greater than total items currently in the array. Then the array identifies the item in the position of the provided index and reassigns it to the item of the next index(i+1). It does this till the second to the last count index of the array.
 If we had an array with these items `[10,20,30,40,50,None,None]`.If we used performed `array.removeAt(2)`, after the above stated operation, it will now look like `[10,30,40,40,None,None]`
 After that, it simply replaces the last copied item with a Nonetype value. The array would then look like this `[10,30,40,None,None,None]`. This is one way of removing an item from an array through it's index with python.
+- The max() method: This returns the maximum value of integers in the array.
+- The intersect() method: This takes in another array as argument and returns intersecting values between itself and the passed array.
+- The reverse() method: This reverses the order of the array and returns it as a new array.
+- The insertAt() method: This takes in the value to be inserted and the index to be inserted into. It inserts the value at the given index.
+- The toString() method: This methods converts the Array object to a string format that can be called and printed in the terminal through the print statement.
+
+### LinkedList
+
