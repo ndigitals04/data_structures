@@ -7,7 +7,7 @@ class Array:
         self.count = 0
     
     def __str__(self):
-        return self.items
+        return self.toString()
     def print(self):
         if self.length == 0:
             print("[]")
@@ -96,8 +96,9 @@ class Array:
         """
         index_length = self.count -1
         if type(index) != int:
+            print(index)
             raise Exception("Index can only be of type int")
-        if index < 0 or index >= self.count:
+        if index < 0 or index > self.count:
             raise Exception("Index Out of bounds")
         
         if self.count == self.length:
@@ -115,32 +116,47 @@ class Array:
             stringArray += str(self.items[i]) + ","
         stringArray += str(self.items[self.count-1]) + "]"
         return stringArray
+    
+    def __getitem__(self,index):
+        return self.lookupbyIndex(index)
+    
+    
+    def __setitem__(self,item,index):
+        self.insertAt(item,index)
 
-array = Array(5) #Creates an array of length 5
-array.insert(1) #Inserts 1 into the array
-array.insert(2) #Inserts 2 into the array
-array.insert(34) 
-array.insert(3) #Inserts 3 into the array
-array.insert(4) #Inserts 4 into the array
-array.insert(5) #Inserts 5 into the array
-array.insert(6) #Inserts 6 into the array, resizes the array
-array.insert(7) #Inserts 7 into the array
-array.insert(8)
-# array.removeAt(3) #Removes the element at index 3
+    def __delitem__(self,index):
+        self.removeAt(index)
 
-# array.print() #Prints the array
-# print(array.lookupbyIndex(4)) # looksup item in array with index of 5
-# print(array.max()) # returns number with the largest value.
-# array2 = Array (3)
-# array2.insert(2)
-# array2.insert(3)
-# array2.insert(7)
 
-# intersection = array.intersect(array2) # returns intersection btw array and array2
-# intersection.print()
-# print(intersection.items)
-# reversed_array = array.reverse() # returns a new array with the values in reverse order
-# reversed_array.print()
+if __name__ == "main":
 
-# array.insertAt(43,3)
-# array.print()
+    array = Array(5) #Creates an array of length 5
+    array.insert(1) #Inserts 1 into the array
+    array.insert(2) #Inserts 2 into the array
+    array.insert(34) 
+    array.insert(3) #Inserts 3 into the array
+    array.insert(4) #Inserts 4 into the array
+    array.insert(5) #Inserts 5 into the array
+    array.insert(6) #Inserts 6 into the array, resizes the array
+    array.insert(7) #Inserts 7 into the array
+    array.insert(8)
+    print(array.count)
+    # array.removeAt(3) #Removes the element at index 3
+
+    # array.print() #Prints the array
+    # print(array.lookupbyIndex(4)) # looksup item in array with index of 5
+    # print(array.max()) # returns number with the largest value.
+    # array2 = Array (3)
+    # array2.insert(2)
+    # array2.insert(3)
+    # array2.insert(7)
+
+    # intersection = array.intersect(array2) # returns intersection btw array and array2
+    # intersection.print()
+    # print(intersection.items)
+    # reversed_array = array.reverse() # returns a new array with the values in reverse order
+    # reversed_array.print()
+
+    # array.insertAt(43,3)
+    # array.print()
+

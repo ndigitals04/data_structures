@@ -148,20 +148,6 @@ class LinkedList():
             return middle_node.value
         else:
             return (middle_node.value,middle_node.next.value)
-        # if self.count % 2 != 0: 
-        #     count_node = self.first
-        #     middle_node = self.first
-        #     while count_node != self.last:
-        #         count_node = count_node.next.next
-        #         middle_node = middle_node.next
-        #     return middle_node.value
-        # else:
-        #     count_node = self.first.next
-        #     middle_node = self.first
-        #     while count_node != self.last:
-        #         count_node = count_node.next.next
-        #         middle_node = middle_node.next 
-        #     return (middle_node.value, middle_node.next.value)               
         
     def hasLoop(self):
         slow_node = self.first
@@ -188,33 +174,33 @@ class Node():
     def __init__(self):
         self.value = ""
         self.next = ""
-
-linkedlist = LinkedList()
-linkedlist.addFirst(4)
-linkedlist.addLast(3)
-linkedlist.addFirst(0)
-linkedlist.addLast(5)
-linkedlist.addFirst(8)
-linkedlist.addLast(7)
-linkedlist.addLast(90)
-linkedlist.addLast(100)
-linkedlist.addLast(110)
-linkedlist.addFirst(7)
-linkedlist.addFirst(5)
-linkedlist.addFirst(6)
-linkedlist.addFirst(45)
-linkedlist.deleteFirst()
-linkedlist.deleteLast()
-print(linkedlist.indexOf(8))
-print(linkedlist.contains(4))
-print(linkedlist.size)
-print(linkedlist.head)
-print(linkedlist.tail)
-print(linkedlist)
-print(linkedlist.reverse())
-print(linkedlist.getKthNodeFromLastNode(5))
-print(linkedlist.printMiddle())
-print(linkedlist.hasLoop())
-# print(linkedlist.size)
-# print(linkedlist.head)
-# print(linkedlist.tail)
+if __name__ == "__main__":
+    linkedlist = LinkedList()
+    linkedlist.addFirst(4)
+    linkedlist.addLast(3)
+    linkedlist.addFirst(0)
+    linkedlist.addLast(5)
+    linkedlist.addFirst(8)
+    linkedlist.addLast(7)
+    linkedlist.addLast(90)
+    linkedlist.addLast(100)
+    linkedlist.addLast(110)
+    linkedlist.addFirst(7)
+    linkedlist.addFirst(5)
+    linkedlist.addFirst(6)
+    linkedlist.addFirst(45)
+    linkedlist.deleteFirst()
+    linkedlist.deleteLast()
+    print(linkedlist.indexOf(8))
+    print(linkedlist.contains(4))
+    print(linkedlist.size)
+    print(linkedlist.head)
+    print(linkedlist.tail)
+    print(linkedlist)
+    print(linkedlist.reverse())
+    print(linkedlist.getKthNodeFromLastNode(5))
+    print(linkedlist.printMiddle())
+    print(linkedlist.hasLoop())
+    # print(linkedlist.size)
+    # print(linkedlist.head)
+    # print(linkedlist.tail)
