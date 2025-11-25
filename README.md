@@ -71,4 +71,19 @@ After that, it simply replaces the last copied item with a Nonetype value. The a
 - The toString() method: This methods converts the Array object to a string format that can be called and printed in the terminal through the print statement.
 
 ### LinkedList
+- __init__() method: This method initilializes a linkedlist with several attributes including a python list [] made of 5 Nonetype values, a count variable for storing the number of values in the linkedlist, a length variable for storing it's size, a first and last variable for storing the head and tail nodes respectively.
+- getpreviousNode(): This method helps to find the node before the node passed as argument to it. It would be useful for deleting.
+- addFirst(): This method takes a value as argument and adds it to the linkedlist as the first/head node.
+- addLast(): This method takes a value as argument and adds it to the linkedlist as the last/tail node.
+- deleteFirst(): This deletes the first/head node of the linkedlist.
+- deleteLast(): This deletes the last/tail node of the linkedlist.
+- indexOf(): This method returns the index of the value passed to it as argument.
+- contains(): This checks if the value passed as argument is present in the linkedlist and returns True or False.
+- reverse(): This reverses the order of the linkedlist. The linkedlist itself is reversed.
+- getKthNodeFromLastNode(): This method checks the distance from the head node to the node provided as argument. It then checks the node at that same distance from the tail node and returns it.
+- printMiddle(): This prints the middle of the middle node value of the linkedlist. If it's size is even, it prints the two nodes in between.
+- hasLoop(): This checks if the linkedlist is circular in nature. That means it loops and has no end.
+
+- Node Class: The entire linkedlist defined here was only possible through this Node class. It has a value and next attributes that are defined at initialization. So that way each node can store it's own value and the node address next to it ie `node.value = 2, node.next = Node()`
+
 
